@@ -74,8 +74,8 @@
                 <nav class="header__nav-wrap">
                     <h2 class="header__nav-heading h6">ナビゲーション</h2>
                     <ul class="header__nav">
-                        <li class="current"><a href="index.html" title="">ホーム</a></li>
-                        <li><a href="prepare.html" title="">環境の準備</a></li>
+                        <li><a href="index.html" title="">ホーム</a></li>
+                        <li class="current"><a href="prepare.html" title="">環境の準備</a></li>
                         <li><a href="search_ebay.html" title="">eBay検索スクリプト</a></li>
                         <li><a href="search_amzn.html" title="">amazon画像検索スクリプト</a></li>
                         <li><a href="order_script.html" title="">販売について</a></li>
@@ -90,7 +90,7 @@
     <section class="s-content">
         <div class="row narrow">
             <div class="col-full s-content__header" data-aos="fade-up">
-                <h1>トップページ</h1>
+                <h1>環境の準備</h1>
             </div>
         </div>
         <div class="row masonry-wrap">
@@ -125,17 +125,12 @@
                             <sup><span class="yy_date"></span></sup>
                         </div>
                         <div class="entry__info">
-                            <h3 class="yy_title">スクリプトについて</h3>
+                            <h3 class="yy_title">スクリプトの実行環境</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <h5>以下のようなスクリプトを作成しています。</h5>
-			    <ol type="1">
-			      <li>ECサイトを検索し、商品名、商品価格、商品画像などを収集する</li>
-			      <li>各情報をJSONやCSVで出力するスクリプト</li>
-			      <li>画像をもとにECサイトで類似商品を検索し、商品名、商品価格、商品画像などを収集する</li>
-			      <li>検索結果をJSON、CSVで保存する</li>
-			      <li>検索結果からHTMLを生成し、目視で類似商品の価格差を把握できるようにする</li>
-			    </ol>
+			    <span>$node -v<br>  v12.4.0</span>
+			    <span>$npm -v<br>  6.9.0</span>
+			    <span>puppeteer version<br>  v1.16.0</span>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
@@ -153,42 +148,18 @@
                             <sup><span class="yy_date"></span></sup>
                         </div>
                         <div class="entry__info">
-                            <h3 class="yy_title">注意事項</h3>
+                            <h3 class="yy_title">環境の準備について</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <ol type="1">
-			      <li>スクリプトの利用で生じたいかなる損害も一切保証いたしません。</li>
-			      <li>スクリプトのソースコードの著作権は作者に帰属します。</li>
-			      <li>自己使用の範囲において改変を認めますが、改変前、改変後に関わらず、再配布は認めません。</li>
-			      <li>スクリプトは買いきりであり、販売した時点での動作のみを保証します。原則としてメンテナンスは一切行いません。</li>
-			    </ol>
+			    <ul>
+			      <li>Mac OSでは、brewでnode.jsをインストール、その後npmでpuppeteerをインストールできると思います。</li>
+			      <li>Linuxでは、yumでnode.jsをインストール、その後npmでpuppeteerをインストールできると思います。</li>
+			      <li>Google検索で、node.jsのインストール、puppeteerの使い方、など検索すると参考サイトが見つかると思います。どうしても分からなければ、できる範囲で相談にのりますので、お問い合わせ下さい。</li>
+			    </ul>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
                                 <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb">
-                    </div>
-                    <div class="entry__text">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">お問い合わせなど</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <h5>スクリプトについてご質問、ご要望などありましたら気軽にご連絡下さい。環境設定などについてはできる限りお答えしていきたいと思います。また『このECサイトでこのような検索をしたい』などのリクエストもお気軽にご相談下さい。</h5>
-			    <h5>メールアドレスは以下です。ドットを"."に、アットを"@"に置き換えて下さい。48時間以内に返答致します。</h5>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author">メールアドレス: rktnドットbooアットgmail.com</span></a>
                             </span>
                         </div>
                     </div>
