@@ -129,14 +129,12 @@
                             <h3 class="yy_title">スクリプトの実行環境</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <pre><code>
-[ymst@scraping]$ node -v
+			    <pre><code>[ymst@scraping]$ node -v
 v.12.4.0
 [ymst@scraping]$ npm -v
 6.9.0
 [ymst@scraping]$ grep "version" ~/node_modules/puppeteer/package.json
-"version": "1.16.0"
-			    </code></pre>
+"version": "1.16.0"</code></pre>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
@@ -157,11 +155,13 @@ v.12.4.0
                             <h3 class="yy_title">環境の準備について</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <ul>
-			      <li>Mac OSでは、brewでnode.jsをインストール、その後npmでpuppeteerをインストールできると思います。</li>
-			      <li>Linuxでは、yumでnode.jsをインストール、その後npmでpuppeteerをインストールできると思います。</li>
+			    <h5>環境は以下の流れで構築できます</h5>
+			    <ol type="1">
+			      <li>まずnode.jsをインストールします。MacOSならbrew、Linuxならyumで可能です。</li>
+			      <li>"node -v"と実行して、バージョンが表示されていればインストールは成功しています。"npm -v"も実行してバージョンが表示されることを確認しましょう。</li>
+			      <li>node.jsをインストールするとnpmが使えるようになるので、次にnpmでpuppeteerをインストールします。</li>
 			      <li>Google検索で、node.jsのインストール、puppeteerの使い方、など検索すると参考サイトが見つかると思います。どうしても分からなければ、できる範囲で相談にのりますので、お問い合わせ下さい。</li>
-			    </ul>
+			    </ol>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
