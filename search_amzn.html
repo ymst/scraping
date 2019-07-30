@@ -130,11 +130,11 @@
                         </div>
                         <div class="entry__excerpt">
 			    <ol type="1">
-			        <li>eBay検索スクリプトの出力ファイル(例ではJSON)をeBay検索結果として読み込みます。</li>
-				<li>eBay検索結果の商品画像を使って、amazonを画像検索します。所謂画像検索ですので、ばっちりマッチすることもあれば、見当外れなこともあります。</li>
-				<li>画像検索の上位5つの結果から、amazonの商品タイトル、商品画像、価格を収集します。その他、ご希望の情報を集めることもできます。</li>
-				<li>eBay検索結果ごとに、画像検索上位5つまでの上記情報を付加してCSVやJSON、その他ご希望のテキストベースの形式で出力します。</li>
-				<li>上記検索結果を見やすくするため、HTMLファイルとして出力するスクリプトも用意しています。</li>
+			        <li>eBay検索スクリプトの出力ファイル(例ではJSON)をeBay検索結果として読み込みます。<br><pre><code>node comp_EC.js eBay_2019xxxx_xxxxxx.json</code></pre></li>
+				<li>eBay検索結果の商品画像をローカルに一旦ダウンロードして、その画像をamazonから検索します。所謂画像検索ですので、ばっちりマッチすることもあれば、見当外れなこともあります。</li>
+				<li>画像検索の最大上位10個の結果から、amazonの商品タイトル、商品画像、価格を収集します。『現在、商品を取り扱っていません』の場合は価格はN/Aと表示されます。その他、ご希望の情報を集めることもできます。</li>
+				<li>eBay検索結果ごとに、画像検索上位10個までの上記情報を付加してCSVやJSON、その他ご希望のテキストベースの形式で出力します。</li>
+				<li>本スクリプトは実行時間がかかる傾向があるため、途中でエラーで停止することがよくあります。しかし、一商品ごとに検索結果を保存していきますので、エラーで検索結果がまったく得られないということはありません。また、エラーログの最後に、検索を再開するコマンドも出力されるので容易に再開することができます。</li>
 			    </ol>
                         </div>
                         <div class="entry__meta">
@@ -145,7 +145,7 @@
                     </div>
                 </article>
 
-                <!-- article class="masonry__brick entry format-standard" data-aos="fade-up">
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
                     <div class="entry__thumb">
                     </div>
                     <div class="entry__text">
@@ -160,7 +160,7 @@
 			    <li>途中で少し停止しますが『次のページへ移動します』で次の検索結果へ移動しています。</li>
 			    <li>検索のスピードは実行環境に依存します。</li>
 			    <hr>
-			    <iframe src="media/screen01.mp4" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			    <iframe src="media/screen02.mp4" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
@@ -168,7 +168,7 @@
                             </span>
                         </div>
                     </div>
-                </article -->
+                </article>
 
             </div> <!-- end masonry -->
         </div> <!-- end masonry-wrap -->
