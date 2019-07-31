@@ -78,8 +78,8 @@
                         <li><a href="prepare.html" title="">環境の準備</a></li>
                         <li><a href="search_ebay.html" title="">eBay検索スクリプト</a></li>
                         <li><a href="search_amzn.html" title="">amazon画像検索スクリプト</a></li>
-                        <li class="current"><a href="create_html.html" title="">HTML作成スクリプト</a></li>
-                        <li><a href="proxy.html" title="">プロキシの準備</a></li>
+                        <li><a href="create_html.html" title="">HTML作成スクリプト</a></li>
+                        <li class="current"><a href="proxy.html" title="">プロキシの準備</a></li>
                         <li><a href="order_script.html" title="">販売について</a></li>
                         <li><a href="aboutme.html" title="">About Me</a></li -->
                     </ul> <!-- end header__nav -->
@@ -92,7 +92,7 @@
     <section class="s-content">
         <div class="row narrow">
             <div class="col-full s-content__header" data-aos="fade-up">
-                <h1>HTML作成</h1>
+                <h1>プロキシの準備</h1>
             </div>
         </div>
         <div class="row masonry-wrap">
@@ -131,37 +131,11 @@
                         </div>
                         <div class="entry__excerpt">
 			    <ul>
-			        <li>スクリプト名は、createHTML.jsです。comp_EC.jsで得られた検索結果であるJSONファイル、comp_EC_out_2019xxxx_xxxxxx.jsonを引数として与えます。ワイルドカードも使用できます。商品が重複している場合は自動的に取り除かれます。<br><pre><code>ex1) node createHTML.js comp_EC_out_20190731_120000.json
-ex2) node createHTML.js comp_EC_out_201907*.json
-</code></pre></li>
-				<li>createHTML.jsは20190801_120000_1.htmlというように、[日付]_[時刻]_[通し番号].htmlというファイルを生成します。200商品ごとに1つのHTMLを出力します。1つのファイルに多くの商品画像を詰めこむとスマホやタブレットで確認するときに表示が遅くなったりするためです。</li>
-				<li>collect_ebay.jsの検索結果の商品情報、画像検索で見付けた類似画像の商品情報を、一商品ごとにHTMLとして表示します。主な目的は、本当に同一商品なのか、価格差はあるか、を目視で容易に確認するためです。</li>
+			        <li>このようなスクレイピングのスクリプトは、しばらく実行するとアクセス禁止されてしまいがちです。それを避けるために、とあるサイトからプロキシサーバを取得しています。</li>
+				<li>プロキシサーバを取得したあと、そのサーバが有効かどうかをチェックし、有効であればIPアドレスとポート番号をJSONファイルとして保存します。</li>
+				<li>なお、自身でプロキシサーバを用意できる場合、IPアドレスとポート番号をもとにJSONファイルを作成しておく必要があります。記述の仕方はお教えします。</li>
+				<li>本サイトのスクレイピングのスクリプトは、JSONファイルに記述されているサーバリストからランダムにプロキシサーバを選び、プロキシを介して実行されます。</li>
 			    </ul>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb">
-                    </div>
-                    <div class="entry__text">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">出力されるHTML</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <li>MacやWindowsであればブラウザに生成されたHTMLをドラッグ＆ドロップすれば見ることができます。その他の環境での方法は調べて下さい。</li>
-			    <li>まず始めに商品画像だけの一覧が出てきます。その画像をクリックすると、その商品情報、及び類似画像検索結果へ移動します。</li>
-			    <img src="images/screen05.jpg" width="100%">
-			    <li>COPYボタンを押すと、商品名、URL、価格がクリップボードにコピーされます。その際、各項目の区切り文字をカンマやスペース、タブなどにしておくこともできますので、ご相談下さい。例えばタブで区切っておくとGoogleスプレッドシートにペーストすれば、各項目を別々のセルに簡単に貼り付けることができます。</li>
-			    <img src="images/screen06.jpg" width="100%">
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
