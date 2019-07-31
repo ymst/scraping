@@ -129,13 +129,13 @@
                             <h3 class="yy_title">スクリプトについて</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <ol type="1">
+			    <ul>
 			        <li>あらかじめ指定しておいた条件でeBayをAdvance検索します。</li>
 				<li>検索条件は、あらかじめスクリプトの中に組み込むことで、ご希望のすべての項目を設定できます。</li>
 				<li>検索結果がなくなるか、検索上限に引っ掛かるまで次々とページをめくり、すべての検索結果を保存します。ただし、回線やサーバーの混み具合などで検索が完了しないでエラーで停止する場合がありますが、停止する直前までの検索結果を保存します。</li>
 				<li>商品タイトル、価格、送料、画像、商品リンクを収集しますが、その他ご希望の情報を集めることもできます。</li>
 				<li>検索結果はCSVやJSON、その他ご希望のテキストベースの形式で出力できます。</li>
-			    </ol>
+			    </ul>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
@@ -156,12 +156,36 @@
                             <h3 class="yy_title">スクリプトの実行画面</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <li>最初の検索結果が出てくるまで10秒程度かかります。</li>
-			    <li>途中で少し停止しますが『次のページへ移動します』で次の検索結果へ移動しています。</li>
-			    <li>検索のスピードは実行環境に依存します。</li>
-			    <li>検索結果は、eBay_[開始時刻].jsonに保存されます。</li>
-			    <hr>
+			    <ul>
+			      <li>最初の検索結果が出てくるまで10秒程度かかります。</li>
+			      <li>途中で少し停止しますが『次のページへ移動します』で次の検索結果へ移動しています。</li>
+			      <li>検索のスピードは実行環境に依存します。</li>
+			      <li>検索結果は、eBay_[開始時刻].jsonに保存されます。</li>
+			    </ul>
 			    <iframe src="media/screen01.mp4" height="640" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#"><span class="yy_author"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date"></span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">検索結果</h3>
+                        </div>
+                        <div class="entry__excerpt">
+			    <span>本例では検索結果はJSON形式で出力されますが、その他CSVなどテキスト形式のフォーマットであれば何でも対応できます。</span>
+			    <hr>
+			    <img src="images/screen03.jpg" width="100%">
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
