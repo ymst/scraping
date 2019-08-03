@@ -141,15 +141,15 @@
                             <h3 class="yy_title">スクリプトについて</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <ol type="1">
-			        <li>スクリプト名は、comp_EC.jsです。collect_ebay.jsで得られた検索結果であるJSONファイルを引数として与えます。ワイルドカードも使用できます。<br><pre><code>ex1) node comp_EC.js eBay_20190731_120000.json
+			    <ul>
+			        <li>スクリプト名は、<span class="yy_marker">comp_EC.js</span>です。collect_ebay.jsで得られた検索結果の<span class="yy_marker2">JSONファイル</span>を引数として与えます。ワイルドカードも使用できます。<br><pre><code>ex1) node comp_EC.js eBay_20190731_120000.json
 ex2) node comp_EC.js eBay_20190731*.json
 </code></pre></li>
-				<li>collect_ebay.jsの検索結果の商品画像をローカルに一旦ダウンロードして、その画像に似た商品画像をamazonから検索します。所謂画像検索ですので、ばっちりマッチすることもあれば、見当外れなこともあります。</li>
+				<li>collect_ebay.jsの検索結果の商品画像をローカルに一旦ダウンロードして、その画像に似た商品画像をamazonから検索します。所謂画像検索ですので、<span class="yy_marker3">ばっちりマッチすることもあれば、見当外れなこともあります</span>。</li>
 				<li>画像検索の最大上位10個の結果から、amazonの商品タイトル、商品画像、価格を収集します。『現在、商品を取り扱っていません』の場合は価格はN/Aと表示されます。その他、ご希望の情報を集めることもできます。</li>
-				<li>collect_ebay.jsの検索結果の一商品ごとに、画像検索上位10個までの上記情報を付加してCSVやJSON、その他ご希望のテキストベースの形式で出力します。</li>
-				<li>本スクリプトは実行時間がかかる傾向があるため、途中でエラーで停止することがよくあります。しかし、一商品ごとに検索結果を保存していきますので、エラーで検索結果がまったく得られないということはありません。また、エラーログの最後に、検索を再開するコマンドも出力されるので容易に検索を再開することができます。</li>
-			    </ol>
+				<li>collect_ebay.jsの検索結果の一商品ごとに、<span class="yy_marker">画像検索上位10個まで</span>の結果を付加してCSVやJSON、その他ご希望のテキストベースの形式で出力します。</li>
+				<li>本スクリプトは実行時間がかかる傾向があるため、<span class="yy_marker2">途中でエラーで停止</span>することがよくあります。しかし、一商品ごとにamazonを検索した後結果を保存していきますので、エラー終了して検索結果も一切残らない、ということはありません。また、エラーログの最後に、検索を再開するコマンドも出力されるので容易に検索を再開することができます。</li>
+			    </ul>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
