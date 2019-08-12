@@ -3,9 +3,9 @@
 <head>
     <!--- basic page needs    ================================================== -->
     <meta charset="utf-8">
-    <title>EC scraping</title>
-    <meta content="puppeteer,chrome,javascript,browser,node.js,ブラウザ,scraping,scrape,スクレイピング,mac,windows,linux,ios,android,csv,excel,spreadsheet,エクセル,スプレッドシート,eBay,amazon,キーワード,keyword,automation,auto,automated,macro,script,bot,自動,マクロ,スクリプト,ボット", name="keyword">
-    <meta content="puppeteerを使ってECサイトから商品情報をスクレイピングすることが目的です" name="description">
+    <title>PDF版官報収集</title>
+    <meta content="puppeteer,chrome,javascript,browser,node.js,ブラウザ,scraping,scrape,スクレイピング,mac,windows,linux,ios,android,csv,excel,spreadsheet,エクセル,スプレッドシート,eBay,amazon,キーワード,keyword,automation,auto,automated,macro,script,bot,自動,マクロ,スクリプト,ボット,PDF,官報,", name="keyword">
+    <meta content="puppeteerを使ってPDF版官報を収集することが目的です" name="description">
     <meta name="author" content="">
     <!-- mobile specific metas    ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -80,18 +80,16 @@
     <section class="s-pageheader s-pageheader--home">
         <header class="header">
             <div class="header__content row">
-	      <h1 style="color: white;">EC scraping</h1>
+	      <h1 style="color: white;">PDF版官報収集</h1>
                 <a class="header__toggle-menu" href="#0" title="Menu"><span>メニュー</span></a>
                 <nav class="header__nav-wrap">
                     <h2 class="header__nav-heading h6">ナビゲーション</h2>
                     <ul class="header__nav">
-                        <li><a href="index.html" title="">ホーム</a></li>
-                        <li><a href="prepare.html" title="">環境の準備</a></li>
-                        <li><a href="search_ebay.html" title="">eBay検索スクリプト</a></li>
-                        <li class="current"><a href="search_amzn.html" title="">amazon画像検索スクリプト</a></li>
-                        <li><a href="create_html.html" title="">HTML作成スクリプト</a></li>
-                        <li><a href="proxy.html" title="">プロキシの準備</a></li>
-                        <li><a href="order_script.html" title="">販売について</a></li>
+                        <li><a href="index2.html" title="">ホーム</a></li>
+                        <li class="current"><a href="prepare2.html" title="">環境の準備</a></li>
+                        <li><a href="get_kanpou2.html" title="">スクリプト説明</a></li>
+                        <li><a href="example2.html" title="">運用例</a></li>
+                        <li><a href="order_script2.html" title="">販売について</a></li>
                         <li><a href="aboutme.html" title="">About Me</a></li -->
                     </ul> <!-- end header__nav -->
                     <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
@@ -103,7 +101,7 @@
     <section class="s-content">
         <div class="row narrow">
             <div class="col-full s-content__header" data-aos="fade-up">
-                <h1>amazon画像検索</h1>
+                <h1>環境の準備</h1>
             </div>
         </div>
         <div class="row masonry-wrap">
@@ -138,18 +136,24 @@
                             <sup><span class="yy_date"></span></sup>
                         </div>
                         <div class="entry__info">
-                            <h3 class="yy_title">スクリプトについて</h3>
+                            <h3 class="yy_title">スクリプトの実行環境</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <ul>
-			        <li>スクリプト名は、<span class="yy_marker">comp_EC.js</span>です。collect_ebay.jsで得られた検索結果の<span class="yy_marker2">JSONファイル</span>を引数として与えます。ワイルドカードも使用できます。<br><pre><code>ex1) node comp_EC.js eBay_20190731_120000.json
-ex2) node comp_EC.js eBay_20190731*.json
-</code></pre></li>
-				<li>collect_ebay.jsの検索結果の商品画像をローカルに一旦ダウンロードして、その画像に似た商品画像をamazonから検索します。所謂画像検索ですので、<span class="yy_marker3">ばっちりマッチすることもあれば、見当外れなこともあります</span>。</li>
-				<li>画像検索の最大上位10個の結果から、amazonの商品タイトル、商品画像、価格を収集します。『現在、商品を取り扱っていません』の場合は価格はN/Aと表示されます。その他、ご希望の情報を集めることもできます。</li>
-				<li>collect_ebay.jsの検索結果の一商品ごとに、<span class="yy_marker">画像検索上位10個まで</span>の結果を付加してCSVやJSON、その他ご希望のテキストベースの形式で出力します。</li>
-				<li>本スクリプトは実行時間がかかる傾向があるため、<span class="yy_marker2">途中でエラーで停止</span>することがよくあります。しかし、一商品ごとにamazonを検索した後結果を保存していきますので、エラー終了して検索結果も一切残らない、ということはありません。また、エラーログの最後に、検索を再開するコマンドも出力されるので容易に検索を再開することができます。</li>
-			    </ul>
+			    <h7><pre><code>#node.jsのversion
+[ymst@scraping]$ node -v
+v.12.4.0
+
+#npmのversion
+[ymst@scraping]$ npm -v
+6.9.0
+
+#puppeteerのversion
+[ymst@scraping]$ grep "version" ~/node_modules/puppeteer/package.json
+"version": "1.16.0"
+
+#curlのversion
+[ymst@scraping]$ curl -V
+curl 7.29.0 (x86_64-redhat-linux-gnu)</code></pre></h7>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
@@ -167,36 +171,17 @@ ex2) node comp_EC.js eBay_20190731*.json
                             <sup><span class="yy_date"></span></sup>
                         </div>
                         <div class="entry__info">
-                            <h3 class="yy_title">スクリプトの実行画面</h3>
+                            <h3 class="yy_title">環境の準備について</h3>
                         </div>
                         <div class="entry__excerpt">
-			    <li>最初の検索結果が出てくるまで数秒程度かかります。</li>
-			    <li>検索のスピードは実行環境に依存します。</li>
-			    <hr>
-			    <iframe src="media/screen02.mp4" height="640" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb">
-                    </div>
-                    <div class="entry__text">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">再開コマンド</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <span>ログの[To Restart:]から始まる行のコマンドで再開できます。</span>
-			    <hr>
-			    <img src="images/screen02.jpg" width="100%">
+			    <h5>環境は以下の流れで構築できます。インストール方法などについては他のサイトを検索、参照してみて下さい。</h5>
+			    <ol type="1">
+			      <li>まず<span class="yy_marker">node.js</span>をインストールします。MacOSならbrew、Linuxならyumで可能です。Windowsは使っていないのでインストールしたことありません、ググってみて下さい。</li>
+			      <li>"node -v"と実行して、バージョンが表示されていればインストールは成功しています。"npm -v"も実行してバージョンが表示されることを確認しましょう。</li>
+			      <li>node.jsをインストールするとnpmが使えるようになるので、次にnpmで<span class="yy_marker">puppeteer</span>をインストールします。</li>
+			      <li><span class="yy_marker">curl</span>をインストールします。MacOSならbrew、Linuxならyumで可能です。Windowsは使っていないのでインストールしたことありません、ググってみて下さい。</li>
+			    </ol>
+			    <h5>どうしても分からなければ、できる範囲で相談にのりますので、お気軽にお問い合わせ下さい。</h5>
                         </div>
                         <div class="entry__meta">
                             <span class="entry__meta-links">
