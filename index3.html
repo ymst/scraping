@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <!--- basic page needs    ================================================== -->
+    <meta charset="utf-8">
+    <title>BIT競売物件収集</title>
+    <meta content="puppeteer,chrome,javascript,browser,node.js,ブラウザ,scraping,scrape,スクレイピング,mac,windows,linux,ios,android,csv,excel,spreadsheet,エクセル,スプレッドシート,eBay,amazon,キーワード,keyword,automation,auto,automated,macro,script,bot,自動,マクロ,スクリプト,ボット,BIT,競売,競売物件,ダウンロード,収集", name="keyword">
+    <meta content="puppeteerを使って競売物件情報を収集することが目的です" name="description">
+    <meta name="author" content="">
+    <!-- mobile specific metas    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&amp;subset=cyrillic,japanese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!-- CSS    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- script    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <!-- favicons    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133844353-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-133844353-4');
+    </script>
+
+</head>
+<style>
+  /* CSS for LQIP blur added by Yama190220
+   use calss "lazyload blur" instead of "lazyload" */
+.blur {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    transition: filter 600ms, -webkit-filter 600ms;
+}
+.blur.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
+.yy_title {
+    padding: 0.4em 0.5em; /* 文字の上下 左右の余白 */
+    color: #494949; /* 文字色 */
+    /* background: #f4f4f4; */ /* 背景色 */
+    border-left: solid 5px #7db4e6; /* 左線 */
+    border-bottom: solid 3px #d7d7d7; /* 下線 */
+}
+.yy_marker {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;
+}
+.yy_marker2 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #cce5ff 0%) repeat scroll 0 0;
+}
+.yy_marker3 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #ffffbc 0%) repeat scroll 0 0;
+}
+.yy_date {
+    text-align: left;
+    color: #ff6347;
+}
+.yy_author {
+    text-align: right;
+    color: #5f9ea0;
+}
+.yy_pubdate {
+    text-align: right;
+    color: #006400;
+}
+</style>
+<body id="top">
+    <!-- pageheader    ================================================== -->
+    <section class="s-pageheader s-pageheader--home">
+        <header class="header">
+            <div class="header__content row">
+	      <h1 style="color: white;">BIT競売物件収集</h1>
+                <a class="header__toggle-menu" href="#0" title="Menu"><span>メニュー</span></a>
+                <nav class="header__nav-wrap">
+                    <h2 class="header__nav-heading h6">ナビゲーション</h2>
+                    <ul class="header__nav">
+                        <li class="current"><a href="index3.html" title="">ホーム</a></li>
+                        <li><a href="prepare3.html" title="">環境の準備</a></li>
+                        <li><a href="collect_bit3.html" title="">スクリプト説明</a></li>
+                        <li><a href="order_script3.html" title="">販売について</a></li>
+                        <li><a href="aboutme.html" title="">About Me</a></li -->
+                    </ul> <!-- end header__nav -->
+                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+                </nav> <!-- end header__nav-wrap -->
+            </div> <!-- header-content -->
+        </header> <!-- header -->
+    </section> <!-- end s-pageheader -->
+    <!-- s-content    ================================================== -->
+    <section class="s-content">
+        <div class="row narrow">
+            <div class="col-full s-content__header" data-aos="fade-up">
+                <h1>トップページ</h1>
+            </div>
+        </div>
+        <div class="row masonry-wrap">
+            <div class="masonry">
+                <div class="grid-sizer"></div>
+
+                <!-- article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date">見出し</span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">本文</h3>
+                        </div>
+                        <div class="entry__excerpt">
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="102.html"><span class="yy_author">リンクページや脚注などの情報</span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date"></span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">スクリプトについて</h3>
+                        </div>
+                        <div class="entry__excerpt">
+			    <h5>BIT競売物件情報サイトから、希望する条件に基づいて三点セットをダウンロードします。<br>新しく掲載のあった物件情報を手動でダウンロードするのは非常に面倒なのです。</h5>
+			    <ul>
+			        <li>検索条件は価格、エリア、物件の種類などご希望の条件をすべて設定できます。</li>
+			        <li>サイトへのアクセス負荷を軽減するため、ダウンロードのスピードは早くありません。寝ている間などの実行をオススメします。</li>
+			    </ul>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#"><span class="yy_author"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date"></span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">注意事項</h3>
+                        </div>
+                        <div class="entry__excerpt">
+			    <ul>
+			      <li>スクリプトの利用で生じたいかなる損害も<span class="yy_marker">一切保証いたしません。</span></li>
+			      <li>スクリプトのソースコードの著作権は<span class="yy_marker">作者に帰属</span>します。</li>
+			      <li>自己使用の範囲において改変を認めますが、改変前、改変後に関わらず、<span class="yy_marker">再配布は認めません</span>。</li>
+			      <li>スクリプトは<span class="yy_marker">買いきり</span>であり、販売した時点での動作のみを保証します。原則として<span class="yy_marker">メンテナンスは一切行いません</span>。</li>
+			    </ul>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#"><span class="yy_author"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date"></span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">お問い合わせなど</h3>
+                        </div>
+                        <div class="entry__excerpt">
+			    <h5>スクリプトについてご質問、ご要望などありましたら気軽にご連絡下さい。</h5><br>環境設定などについてはできる限りお答えしていきたいと思います。また『このECサイトでこのような検索をしたい』などのリクエストもお気軽にご相談下さい。<br>メールアドレスは以下です。<br>ドットを"."に、アットを"@"に置き換えて下さい。48時間以内に返答致します。</h5>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#"><span class="yy_author">rktnドットbooアットgmail.com</span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+            </div> <!-- end masonry -->
+        </div> <!-- end masonry-wrap -->
+    </section>
+    <footer class="s-footer">
+        <div class="s-footer__main">
+            <div class="row">
+	        <ul>
+		    <span><u>その他のスクリプト</u></span>
+		    <li>ECサイトから商品情報を取得する<a href="index.html">スクリプト</a></li>
+		    <li>官報をダウンロードする<a href="index2.html">スクリプト</a></li>
+		    <li>競売情報をダウンロードする<a href="index3.html">スクリプト</a></li>
+		</ul>
+            </div>
+        </div> <!-- end s-footer__main -->
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Copyright Philosophy 2018</span>
+                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+                    </div>
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end s-footer__bottom -->
+    </footer> <!-- end s-footer -->
+    <!-- preloader    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Java Script    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
