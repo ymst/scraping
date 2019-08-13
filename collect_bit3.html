@@ -140,8 +140,8 @@
                         <div class="entry__excerpt">
 			    <ul>
 			        <li>スクリプト名は、<span class="yy_marker">collect_bit.js</span>です。</li>
-				<li>まず、BIT競売情報サイトの検索条件を設定します。現状では、エリア、価格、種類(土地、戸建て、マンション)を設定します。</li>
-				<li>設定した検索条件の検索結果から、すべての物件の3点セットといわれるPDFをダウンロードします。</li>
+				<li>まず、BIT競売情報サイトの検索条件を設定します。ベースとなるスクリプトは、価格を○円以下、種類(戸建て、マンション)でエリア検索を行います。これらの検索条件はすべてご希望通りにスクリプト内に設定致します。</li>
+				<li>設定した検索条件の検索結果から、すべての物件の3点セットといわれるPDFをダウンロードします。掲載期間前、掲載終了の物件は3点セットは用意されていないのでスキップします。</li>
 				<li>スクリプトはこのように実行するだけです。<br><pre><code>[ymst@~]$ node collect_bit.js
 </code></pre></li>
 				<li>ダウンロードされたPDFファイルは、TOK_H31K00013_1.pdfやTOT_H30K00025_1.pdfなどの名前で、スクリプトを実行したディレクトリに保存されます。</li>
@@ -168,6 +168,7 @@
                         <div class="entry__excerpt">
 			    <li><span class="yy_marker">collect_bit.js</span>は、サーバへの負荷を考慮して、ひとつずつダウンロードを行います。</li>
 			    <li>以下の動画は極度に早送りしています、あくまでスクリプトが動作している様子を示しただけのもので速度はもっと遅いです。</li>
+			    <li>夜中や明け方に実行するような使い方をオススメします。</li>
 			    <iframe src="media/screen05.mp4" height="640" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
                         <div class="entry__meta">
