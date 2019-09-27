@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <!--- basic page needs    ================================================== -->
+    <meta charset="utf-8">
+    <title>Yamashimok Space</title>
+    <meta content="puppeteer,chrome,javascript,browser,node.js,ブラウザ,scraping,scrape,スクレイピング,mac,windows,linux,ios,android,csv,excel,spreadsheet,エクセル,スプレッドシート,eBay,amazon,キーワード,keyword,automation,auto,automated,macro,script,bot,自動,マクロ,スクリプト,ボット", name="keyword">
+    <meta content="puppeteerを使ってECサイトから商品情報をスクレイピングすることが目的です" name="description">
+    <meta name="author" content="">
+    <!-- mobile specific metas    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&amp;subset=cyrillic,japanese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!-- CSS    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- script    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <!-- favicons    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133844353-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-133844353-4');
+    </script>
+
+</head>
+<style>
+  /* CSS for LQIP blur added by Yama190220
+   use calss "lazyload blur" instead of "lazyload" */
+.blur {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    transition: filter 600ms, -webkit-filter 600ms;
+}
+.blur.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
+.yy_title {
+    padding: 0.4em 0.5em; /* 文字の上下 左右の余白 */
+    color: #494949; /* 文字色 */
+    /* background: #f4f4f4; */ /* 背景色 */
+    border-left: solid 5px #7db4e6; /* 左線 */
+    border-bottom: solid 3px #d7d7d7; /* 下線 */
+}
+.yy_marker {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;
+}
+.yy_marker2 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #cce5ff 0%) repeat scroll 0 0;
+}
+.yy_marker3 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #ffffbc 0%) repeat scroll 0 0;
+}
+.yy_date {
+    text-align: left;
+    color: #ff6347;
+}
+.yy_author {
+    text-align: right;
+    color: #5f9ea0;
+}
+.yy_pubdate {
+    text-align: right;
+    color: #006400;
+}
+</style>
+<body id="top">
+    <!-- pageheader    ================================================== -->
+    <section class="s-pageheader s-pageheader--home">
+        <header class="header">
+            <div class="header__content row">
+	      <h1 style="color: white;">Yamashimok Space</h1>
+                <a class="header__toggle-menu" href="#0" title="Menu"><span>メニュー</span></a>
+                <nav class="header__nav-wrap">
+                    <h2 class="header__nav-heading h6">ナビゲーション</h2>
+                    <ul class="header__nav">
+                        <li><a href="top.html" title="">トップページ</a></li>
+                        <li><a href="skynew_m3s.html" title="">skynew m3sの設定</a></li>
+                        <li><a href="centos_env.html" title="">centosの環境の構築</a></li>
+                        <li class="current"><a href="puppeteer_tips.html" title="">puppeteer TIPs</a></li>
+                    </ul> <!-- end header__nav -->
+                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+                </nav> <!-- end header__nav-wrap -->
+            </div> <!-- header-content -->
+        </header> <!-- header -->
+    </section> <!-- end s-pageheader -->
+    <!-- s-content    ================================================== -->
+    <section class="s-content">
+        <div class="row narrow">
+            <div class="col-full s-content__header" data-aos="fade-up">
+                <h1>puppeteer TIPs</h1>
+            </div>
+        </div>
+        <div class="row masonry-wrap">
+            <div class="masonry">
+                <div class="grid-sizer"></div>
+
+                <!-- article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date">見出し</span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">本文</h3>
+                        </div>
+                        <div class="entry__excerpt">
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="102.html"><span class="yy_author">リンクページや脚注などの情報</span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article -->
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date"></span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">puppeteerの自分用メモ</h3>
+                        </div>
+                        <div class="entry__excerpt">
+			    <p>puppeteerを使っていろいろスクレイピングを始めてから、検索して得た情報を以下にメモしていく。</p>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#"><span class="yy_author"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date"></span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">ブラウザを開く</h3>
+                        </div>
+                        <div class="entry__excerpt">
+			    <p>まず、ユーザエージェントの設定について。</p>
+<pre><code>
+page.setUserAgent([UA 文字列]);
+page.setUserAgent('Mozilla/5.0 ..'); //特に指定しない場合
+</code></pre>
+			    <p>プロキシを使う設定について。</p>
+<pre><code>
+puppeteer.launch({
+    args: ['--lang=ja,en-US,en', '--no-sandbox', '--proxy-server=[IPアドレス]:[ポート]']
+    });
+</code></pre>
+			    <p>高速化のため、画像や動画を読み込まない設定をする。</p>
+<pre><code>
+page.on('request', interceptedRequest => {
+    if (interceptedRequest.url().endsWith('.png') || interceptedRequest.url().endsWith('.jpg') || interceptedRequest.url().endsWith('.mov') || interceptedRequest.url().endsWith('.mp4'))
+        interceptedRequest.abort();
+    else
+        interceptedRequest.continue();
+});
+</code></pre>
+			    <p>タブの取得、タブの作成について。</p>
+<pre><code>
+// 1枚めのタブを取得する
+var page = (browser.pages())[0];
+// 新たなタブを開く
+var page = browser.newPage();
+</code></pre>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#"><span class="yy_author"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                    <div class="entry__thumb">
+                    </div>
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            <sup><span class="yy_date"></span></sup>
+                        </div>
+                        <div class="entry__info">
+                            <h3 class="yy_title">URLを開く</h3>
+                        </div>
+                        <div class="entry__excerpt">
+			    <p>普通に開くには。</p>
+<pre><code>
+page.goto([URL]);
+</code></pre>
+			    <p>少し細かな設定。タイムアウトや読み込み終了条件など。</p>
+<pre><code>
+page.goto([URL],{
+    timeout: [msec],
+    waitUntil: ["load", "domcontentloaded", "networkidle0"]
+    }
+);
+</code></pre>
+			    <p>page.gotoが失敗したことを検出する。</p>
+<pre><code>
+try {
+    page.goto([URL]);
+}
+catch(e) {
+    console.log('ページを開けませんでした');
+}
+</code></pre>
+			    <p>page.gotoの戻り値でHTTP statusコードなどを取得できる。</p>
+<pre><code>
+const RESULT = await page.goto([URL]);
+console.log(RESULT._status);
+</code></pre>
+                        </div>
+                        <div class="entry__meta">
+                            <span class="entry__meta-links">
+                                <a href="#"><span class="yy_author"></span></a>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+
+
+
+            </div> <!-- end masonry -->
+        </div> <!-- end masonry-wrap -->
+    </section>
+    <footer class="s-footer">
+        <div class="s-footer__main">
+            <div class="row">
+	        <!-- ul>
+		    <span><u>その他のスクリプト</u></span>
+		    <li>ECサイトから商品情報を取得する<a href="index.html">スクリプト</a></li>
+		    <li>官報をダウンロードする<a href="index2.html">スクリプト</a></li>
+		    <li>競売情報をダウンロードする<a href="index3.html">スクリプト</a></li>
+		</ul -->
+            </div>
+        </div> <!-- end s-footer__main -->
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Copyright Philosophy 2018</span>
+                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+                    </div>
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end s-footer__bottom -->
+    </footer> <!-- end s-footer -->
+    <!-- preloader    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Java Script    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
