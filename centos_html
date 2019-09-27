@@ -3,7 +3,7 @@
 <head>
     <!--- basic page needs    ================================================== -->
     <meta charset="utf-8">
-    <title>Yamashimok Space</title>
+    <title>Mok Space</title>
     <meta content="puppeteer,chrome,javascript,browser,node.js,ブラウザ,scraping,scrape,スクレイピング,mac,windows,linux,ios,android,csv,excel,spreadsheet,エクセル,スプレッドシート,eBay,amazon,キーワード,keyword,automation,auto,automated,macro,script,bot,自動,マクロ,スクリプト,ボット", name="keyword">
     <meta content="puppeteerを使ってECサイトから商品情報をスクレイピングすることが目的です" name="description">
     <meta name="author" content="">
@@ -80,14 +80,14 @@
     <section class="s-pageheader s-pageheader--home">
         <header class="header">
             <div class="header__content row">
-	      <h1 style="color: white;">Yamashimok Space</h1>
+	      <h1 style="color: white;">Mok Space</h1>
                 <a class="header__toggle-menu" href="#0" title="Menu"><span>メニュー</span></a>
                 <nav class="header__nav-wrap">
                     <h2 class="header__nav-heading h6">ナビゲーション</h2>
                     <ul class="header__nav">
                         <li><a href="top.html" title="">トップページ</a></li>
                         <li><a href="skynew_m3s.html" title="">skynew m3sの設定</a></li>
-                        <li class="current"><a href="centos_env.html" title="">centosの環境の構築</a></li>
+                        <li class="current"><a href="centos_env.html" title="">centosの立ち上げ</a></li>
                         <li><a href="puppeteer_tips.html" title="">puppeteer TIPs</a></li>
                     </ul> <!-- end header__nav -->
                     <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
@@ -97,105 +97,37 @@
     </section> <!-- end s-pageheader -->
     <!-- s-content    ================================================== -->
     <section class="s-content">
-        <div class="row narrow">
-            <div class="col-full s-content__header" data-aos="fade-up">
-                <h1>centos</h1>
+
+        <div class="row narrow section-intro add-bottom text-center">
+            <div class="col-twelve tab-full">
+                <h1>centosの立ち上げ</h1>
             </div>
         </div>
-        <div class="row masonry-wrap">
-            <div class="masonry">
-                <div class="grid-sizer"></div>
 
-                <!-- article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb">
-                    </div>
-                    <div class="entry__text">
-                        <div class="entry__header">
-                            <sup><span class="yy_date">見出し</span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">本文</h3>
-                        </div>
-                        <div class="entry__excerpt">
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="102.html"><span class="yy_author">リンクページや脚注などの情報</span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article -->
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">centosの環境の構築</h3>
+		<p>iMacのときは当たり前のように使っていた機能、アプリ。それらを補うためにやったことを以下にメモしていく。</p>
+            </div>
+        </div>
 
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">centosの環境の構築</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>iMacのときは当たり前のように使っていた機能、アプリ。それらを補うためにやったことを以下にメモしていく。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">宛名ラベルを簡単に作成</h3>
+		<p>郵便物を送りたいときの宛名の印刷にiMacではテキストエディットを使っていた。リッチテキストの編集ができて、かんたんにフォントとかサイズとか変えられてちょうど良かったんだけど。</p>
+		<p>centosにそんなもんあるのか？と探してもイマイチ見つからず…デスクトップのメニューを眺めるとLibre Officeがあんじゃ〜ん！Wordみたいなヤツでサクッと作れた。</p>
+            </div>
+        </div>
 
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">宛名ラベルを簡単に作成</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			  <p>郵便物を送りたいときの宛名の印刷にiMacではテキストエディットを使っていた。リッチテキストの編集ができて、かんたんにフォントとかサイズとか変えられてちょうど良かったんだけど。</p>
-			  <p>centosにそんなもんあるのか？と探してもイマイチ見つからず…デスクトップのメニューを眺めるとLibre Officeがあんじゃ〜ん！Wordみたいなヤツでサクッと作れた。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">オーディオCDを焼く</h3>
+		<p>ふとしたことがキッカケで、ある音声をCDに焼く必要がでてきた。親世代に、音声ファイル送ってスマホで聞け、というのはなかなか酷なハナシで。カセットテープかCDなら聞けるというので、CDに焼いて送る約束をしました…がどうやって？</p>
+		<p>プリインストールされてました、デスクトップのメニューからBraceroを選択。音楽以外にもデータや動画など色々焼けるみたいで、サクッと焼けた。</p>
+		<p>あ、m4a(AAC)がダメだったからmp3にエンコードしてから焼きました。</p>
+            </div>
+        </div>
 
-
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">オーディオCDを焼く</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>ふとしたことがキッカケで、ある音声をCDに焼く必要がでてきた。親世代に、音声ファイル送ってスマホで聞け、というのはなかなか酷なハナシで。カセットテープかCDなら聞けるというので、CDに焼いて送る約束をしました…がどうやって？</p>
-			    <p>プリインストールされてました、デスクトップのメニューからBraceroを選択。音楽以外にもデータや動画など色々焼けるみたいで、サクッと焼けた。</p>
-			    <p>あ、m4a(AAC)がダメだったからmp3にエンコードしてから焼きました。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-
-            </div> <!-- end masonry -->
-        </div> <!-- end masonry-wrap -->
     </section>
     <footer class="s-footer">
         <div class="s-footer__main">

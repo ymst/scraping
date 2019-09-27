@@ -3,7 +3,7 @@
 <head>
     <!--- basic page needs    ================================================== -->
     <meta charset="utf-8">
-    <title>Yamashimok Space</title>
+    <title>Mok Space</title>
     <meta content="puppeteer,chrome,javascript,browser,node.js,ブラウザ,scraping,scrape,スクレイピング,mac,windows,linux,ios,android,csv,excel,spreadsheet,エクセル,スプレッドシート,eBay,amazon,キーワード,keyword,automation,auto,automated,macro,script,bot,自動,マクロ,スクリプト,ボット", name="keyword">
     <meta content="puppeteerを使ってECサイトから商品情報をスクレイピングすることが目的です" name="description">
     <meta name="author" content="">
@@ -80,7 +80,7 @@
     <section class="s-pageheader s-pageheader--home">
         <header class="header">
             <div class="header__content row">
-	      <h1 style="color: white;">Yamashimok Space</h1>
+	      <h1 style="color: white;">Mok Space</h1>
                 <a class="header__toggle-menu" href="#0" title="Menu"><span>メニュー</span></a>
                 <nav class="header__nav-wrap">
                     <h2 class="header__nav-heading h6">ナビゲーション</h2>
@@ -97,235 +97,102 @@
     </section> <!-- end s-pageheader -->
     <!-- s-content    ================================================== -->
     <section class="s-content">
-        <div class="row narrow">
-            <div class="col-full s-content__header" data-aos="fade-up">
-                <h1>Skynew m3s</h1>
+
+        <div class="row narrow section-intro add-bottom text-center">
+            <div class="col-twelve tab-full">
+                <h1>Skynew m3sの設定</h1>
             </div>
         </div>
-        <div class="row masonry-wrap">
-            <div class="masonry">
-                <div class="grid-sizer"></div>
 
-                <!-- article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb">
-                    </div>
-                    <div class="entry__text">
-                        <div class="entry__header">
-                            <sup><span class="yy_date">見出し</span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">本文</h3>
-                        </div>
-                        <div class="entry__excerpt">
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="102.html"><span class="yy_author">リンクページや脚注などの情報</span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article -->
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">centosインストール</h3>
+		<p>まずは、bootable USBを作る。CentOSのDVDイメージをダウンロードし、手持ちのUSBメモリスティックをFAT32でフォーマット、最後にunetbootinでbootable USBが完成。</p>
+		<p>この作業は6年前に購入したVAIOノートで稼働しているpuppy linux上で行った。</p>
+		<p>そしてm3sを起動して、まずはWindowsが立ち上がることを確認。</p>
+		<p>上で作成したUSBスティックを差し、F12を押しながら電源オンにてCentOSのインストーラを起動、Windowsの入っていた領域を消去してインストール。</p>
+		<p>ないと困ると思ったのは、USB有線キーボードとマウス。押し入れに潜り込んでようやく見つけた。</p>
+            </div>
+        </div>
 
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">centosのインストール</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>まずは、bootable USBを作る。CentOSのDVDイメージをダウンロードし、手持ちのUSBメモリスティックをFAT32でフォーマット、最後にunetbootinでbootable USBが完成。</p>
-			    <p>この作業は6年前に購入したVAIOノートで稼働しているpuppy linux上で行った。</p>
-			    <p>そしてm3sを起動して、まずはWindowsが立ち上がることを確認。</p>
-			    <p>上で作成したUSBスティックを差し、F12を押しながら電源オンにてCentOSのインストーラを起動、Windowsの入っていた領域を消去してインストール。</p>
-			    <p>ないと困ると思ったのは、USB有線キーボードとマウス。押し入れに潜り込んでようやく見つけた。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">HFS+から抜け出した話</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>これまでiMacで使っていたデータが詰まったHFS+のHDD達①をごっそり移し替える。iMacでは作業したくなかったので、m3sにUSBで接続してHFS+を読み込めるようにkmod-hfsplusを入れた。そしてHFS+のHDDを接続、マウント後、読み書きできるかを確認。</p>
-			    <p>そしてiMacで使っていたRAID1用HDD②を1つ切り離し、m3sに接続。このHDDに①をごっそりコピーすることにする。</p>
-<pre><code>
-parted -l
-</code></pre>
-			    <p>でデバイス名と容量を確認した後</p>
-<pre><code>
-parted /dev/sd[a-z]
-</code></pre>
-			    <p>でパーティションを作成、ext4でフォーマット。そして②をm3sでマウントし、①のデータを</p>
-<pre><code>
-tar cf - ./* | (cd dist ; tar xf -)
-</code></pre>
-			    <p>でせこせことコピーする。コピーした後①のHDDはすべてext4でフォーマット、バックアップ用とすることにした。RAID組むのも良かったけども、面倒なのでcronでrsyncを動かすことにする。1日に2度バックアップするようにした。</p>
-<pre><code>
-setenv EDITOR /usr/bin/emacs
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">HFS+から抜け出した話</h3>
+		<p>これまでiMacで使っていたデータが詰まったHFS+のHDD達①をごっそり移し替える。iMacでは作業したくなかったので、m3sにUSBで接続してHFS+を読み込めるようにkmod-hfsplusを入れた。そしてHFS+のHDDを接続、マウント後、読み書きできるかを確認。</p>
+		<p>そしてiMacで使っていたRAID1用HDD②を1つ切り離し、m3sに接続。このHDDに①をごっそりコピーすることにする。</p>
+<code>parted -l
+</code>
+		<p>でデバイス名と容量を確認した後</p>
+<code>parted /dev/sd[a-z]
+</code>
+		<p>でパーティションを作成、ext4でフォーマット。そして②をm3sでマウントし、①のデータを</p>
+<code>tar cf - ./* | (cd dist ; tar xf -)
+</code>
+		<p>でせこせことコピーする。コピーした後①のHDDはすべてext4でフォーマット、バックアップ用とすることにした。RAID組むのも良かったけども、面倒なのでcronでrsyncを動かすことにする。1日に2度バックアップするようにした。</p>
+<code>setenv EDITOR /usr/bin/emacs
 crontab -e
-</code></pre>
-			    <p>でcrontabの編集もemacsを使えます。viは苦手。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
+</code>
+		<p>でcrontabの編集もemacsを使えます。viは苦手。</p>
+            </div>
+        </div>
 
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">Sambaのマウント</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>次はルータ兼sambaサーバにぶら下がっているHDDをマウントする。</p>
-			    <p>うちのルータはAterm WG600HPで、こいつのSambaサーバ機能でUSB接続したHDDをあちこちからアクセスしている。</p>
-			    <p>そのためm3sのfstabでこれをマウントしなくてはならないが、なかなか上手くいかなかった。</p>
-			    <p>『ルータのsambaサーバが古くてSMB1しか使えないので、fstabにvers=1.0と書かなければならない』ことに辿り着くまで随分時間がかかった。</p>
-			    <p>ついでに、fstabでマウントポイントを固定したかったので調べてみたら、blkidコマンドで調べたデバイスのUUIDを使って指定できると見つけたので、早速fstabも修正した。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">Sambaのマウント</h3>
+		<p>次はルータ兼sambaサーバにぶら下がっているHDDをマウントする。</p>
+		<p>うちのルータはAterm WG600HPで、こいつのSambaサーバ機能でUSB接続したHDDをあちこちからアクセスしている。</p>
+		<p>そのためm3sのfstabでこれをマウントしなくてはならないが、なかなか上手くいかなかった。</p>
+		<p>『ルータのsambaサーバが古くてSMB1しか使えないので、fstabにvers=1.0と書かなければならない』ことに辿り着くまで随分時間がかかった。</p>
+		<p>ついでに、fstabでマウントポイントを固定したかったので調べてみたら、blkidコマンドで調べたデバイスのUUIDを使って指定できると見つけたので、早速fstabも修正した。</p>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">Wifi接続でトラブった</h3>
+		<p>これまで有線LANで作業してきたが、ようやく切り離してwifiルータとの接続。</p>
+		<p>ん？wifiが全然繋がらない、ルータが同じ部屋にあると平気なのだが壁をはさむと途端にダメ。</p>
+		<p>そんなバカな！？</p>
+		<p>iMacもiPhoneもAndroidも壁越しでもwifi掴むのになぜ？と調べたところ、iwlwifiの設定でpower_level=0と最小になっていることを発見。</p>
+<code>$echo "options iwlwifi 11n_disable=8 power_level=5"
+    >  /etc/modprobe.d/iwlwifi.conf</code>
+                <p>としてリブートするとサックリ繋がった。</p>
+                <p>11nはアグリゲーションらしいけどうちのルータは古いので対応していない。</p>
+            </div>
+        </div>
 
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">Wifi接続でトラブった</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>これまで有線LANで作業してきたが、ようやく切り離してwifiルータとの接続。</p>
-			    <p>ん？wifiが全然繋がらない、ルータが同じ部屋にあると平気なのだが壁をはさむと途端にダメ。</p>
-			    <p>そんなバカな！？</p>
-			    <p>iMacもiPhoneもAndroidも壁越しでもwifi掴むのになぜ？と調べたところ、iwlwifiの設定でpower_level=0と最小になっていることを発見。</p>
-<pre><code>
-$echo "options iwlwifi 11n_disable=8 power_level=5" > /etc/modprobe.d/iwlwifi.conf
-</pre></code>
-                            <p>としてリブートするとサックリ繋がった。</p>
-                            <p>11nはアグリゲーションらしいけどうちのルータは古いので対応していない。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">Node.jsとpuppeteer</h3>
+		<p>headless chrome用にpuppeteerもインストール。</p>
+<code>$yum install nodejs
+$npm install puppeteer</code>
+		<p>両方ともrootでやると良い、のかな？</p>
+		<p>そうしないと、自由にディレクトリ作ってpuppeteerが動かなかった気が…忘れた。</p>
+            </div>
+        </div>
 
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">Node.jsとpuppeteer</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>headless chrome用にpuppeteerもインストール。</p>
-<pre><code>
-$yum install nodejs
-$npm install puppeteer
-</pre></code>
-			    <p>両方ともrootでやると良い、のかな？</p>
-			    <p>そうしないと、自由にディレクトリ作ってpuppeteerが動かなかった気が…忘れた。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">キーボードの設定</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>iMacもAndroidもBluetooth K760キーボードで済ませている。m3sもこのキーボードを使いまわしたい。</p>
-			    <p>こいつはus Macキーボード配列。</p>
-			    <p>それをm3sで使うべく以下のコマンド実行。</p>
-<pre><code>
-$localectl set-X11-keymap us-mac
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">キーボードの設定</h3>
+		<p>iMacもAndroidもBluetooth K760キーボードで済ませている。m3sもこのキーボードを使いまわしたい。</p>
+		<p>こいつはus Macキーボード配列。</p>
+		<p>それをm3sで使うべく以下のコマンド実行。</p>
+<code>$localectl set-X11-keymap us-mac
 $localectl set-keymap jp
-$localectl status
-</pre></code>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
+$localectl status</code>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">マウスの動きが悪かった</h3>
+		<p>マウスの加速が気持ち悪い。少し遅れてズズズッと追いかけてくる感じ。ストレス半端ない。</p>
+		<p>non rootでgnome-teaksを実行すると設定ウインドウが開くので、<br><u>マウスアクセラレーション→flat</u><br>に変更。</p>
+		<p>安物Bluetoothマウスとの相性が悪いのか、思ったよりキビキビ動作しない…どうせGUIで使うのがメインじゃないのでこれで妥協した。</p>
+            </div>
+        </div>
 
-                <article class="masonry__brick entry format-standard" data-aos="fade-up">
-                    <div class="entry__thumb col-full">
-                    </div>
-                    <div class="entry__text col-full">
-                        <div class="entry__header">
-                            <sup><span class="yy_date"></span></sup>
-                        </div>
-                        <div class="entry__info">
-                            <h3 class="yy_title">マウスの動きが悪かった</h3>
-                        </div>
-                        <div class="entry__excerpt">
-			    <p>マウスの加速が気持ち悪い。少し遅れてズズズッと追いかけてくる感じ。ストレス半端ない。</p>
-			    <p>non rootでgnome-teaksを実行すると設定ウインドウが開くので、<br><u>マウスアクセラレーション→flat</u><br>に変更。</p>
-			    <p>安物Bluetoothマウスとの相性が悪いのか、思ったよりキビキビ動作しない…どうせGUIで使うのがメインじゃないのでこれで妥協した。</p>
-                        </div>
-                        <div class="entry__meta">
-                            <span class="entry__meta-links">
-                                <a href="#"><span class="yy_author"></span></a>
-                            </span>
-                        </div>
-                    </div>
-                </article>
-
-            </div> <!-- end masonry -->
-        </div> <!-- end masonry-wrap -->
     </section>
     <footer class="s-footer">
         <div class="s-footer__main">
