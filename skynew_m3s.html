@@ -120,18 +120,18 @@
                 <h3 class="yy_title">HFS+から抜け出した話</h3>
 		<p>これまでiMacで使っていたデータが詰まったHFS+のHDD達①をごっそり移し替える。iMacでは作業したくなかったので、m3sにUSBで接続してHFS+を読み込めるようにkmod-hfsplusを入れた。そしてHFS+のHDDを接続、マウント後、読み書きできるかを確認。</p>
 		<p>そしてiMacで使っていたRAID1用HDD②を1つ切り離し、m3sに接続。このHDDに①をごっそりコピーすることにする。</p>
-<code>parted -l
-</code>
+<pre><code>parted -l
+</code></pre>
 		<p>でデバイス名と容量を確認した後</p>
-<code>parted /dev/sd[a-z]
-</code>
+<pre><code>parted /dev/sd[a-z]
+</code></pre>
 		<p>でパーティションを作成、ext4でフォーマット。そして②をm3sでマウントし、①のデータを</p>
-<code>tar cf - ./* | (cd dist ; tar xf -)
-</code>
+<pre><code>tar cf - ./* | (cd dist ; tar xf -)
+</code></pre>
 		<p>でせこせことコピーする。コピーした後①のHDDはすべてext4でフォーマット、バックアップ用とすることにした。RAID組むのも良かったけども、面倒なのでcronでrsyncを動かすことにする。1日に2度バックアップするようにした。</p>
-<code>setenv EDITOR /usr/bin/emacs
+<pre><code>setenv EDITOR /usr/bin/emacs
 crontab -e
-</code>
+</code></pre>
 		<p>でcrontabの編集もemacsを使えます。viは苦手。</p>
             </div>
         </div>
@@ -154,8 +154,8 @@ crontab -e
 		<p>ん？wifiが全然繋がらない、ルータが同じ部屋にあると平気なのだが壁をはさむと途端にダメ。</p>
 		<p>そんなバカな！？</p>
 		<p>iMacもiPhoneもAndroidも壁越しでもwifi掴むのになぜ？と調べたところ、iwlwifiの設定でpower_level=0と最小になっていることを発見。</p>
-<code>$echo "options iwlwifi 11n_disable=8 power_level=5"
-    >  /etc/modprobe.d/iwlwifi.conf</code>
+<pre><code>$echo "options iwlwifi 11n_disable=8 power_level=5"
+    >  /etc/modprobe.d/iwlwifi.conf</code></pre>
                 <p>としてリブートするとサックリ繋がった。</p>
                 <p>11nはアグリゲーションらしいけどうちのルータは古いので対応していない。</p>
             </div>
@@ -165,8 +165,8 @@ crontab -e
             <div class="col-six tab-full">
                 <h3 class="yy_title">Node.jsとpuppeteer</h3>
 		<p>headless chrome用にpuppeteerもインストール。</p>
-<code>$yum install nodejs
-$npm install puppeteer</code>
+<pre><code>$yum install nodejs
+$npm install puppeteer</code></pre>
 		<p>両方ともrootでやると良い、のかな？</p>
 		<p>そうしないと、自由にディレクトリ作ってpuppeteerが動かなかった気が…忘れた。</p>
             </div>
@@ -178,9 +178,9 @@ $npm install puppeteer</code>
 		<p>iMacもAndroidもBluetooth K760キーボードで済ませている。m3sもこのキーボードを使いまわしたい。</p>
 		<p>こいつはus Macキーボード配列。</p>
 		<p>それをm3sで使うべく以下のコマンド実行。</p>
-<code>$localectl set-X11-keymap us-mac
+<pre><code>$localectl set-X11-keymap us-mac
 $localectl set-keymap jp
-$localectl status</code>
+$localectl status</code></pre>
             </div>
         </div>
 

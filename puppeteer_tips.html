@@ -115,24 +115,24 @@
             <div class="col-six tab-full">
                 <h3 class="yy_title">ブラウザを開く</h3>
 		<p>まず、ユーザエージェントの設定について。</p>
-<code>page.setUserAgent([UA 文字列]);
-page.setUserAgent('Mozilla/5.0 ..'); //特に指定しない場合</code>
+<pre><code>page.setUserAgent([UA 文字列]);
+page.setUserAgent('Mozilla/5.0 ..'); //特に指定しない場合</code></pre>
 		<p>プロキシを使う設定について。</p>
-<code>puppeteer.launch({
+<pre><code>puppeteer.launch({
     args: ['--lang=ja,en-US,en', '--no-sandbox', '--proxy-server=[IPアドレス]:[ポート]']
-    });</code>
+    });</code></pre>
 		<p>高速化のため、画像や動画を読み込まない設定をする。</p>
-<code>page.on('request', interceptedRequest => {
+<pre><code>page.on('request', interceptedRequest => {
     if (interceptedRequest.url().endsWith('.png') || interceptedRequest.url().endsWith('.jpg') || interceptedRequest.url().endsWith('.mov') || interceptedRequest.url().endsWith('.mp4'))
         interceptedRequest.abort();
     else
         interceptedRequest.continue();
-});</code>
+});</code></pre>
 		<p>タブの取得、タブの作成について。</p>
-<code>// 1枚めのタブを取得する
+<pre><code>// 1枚めのタブを取得する
 var page = (browser.pages())[0];
 // 新たなタブを開く
-var page = browser.newPage();</code>
+var page = browser.newPage();</code></pre>
             </div>
         </div>
 
@@ -140,25 +140,25 @@ var page = browser.newPage();</code>
             <div class="col-six tab-full">
                 <h3 class="yy_title">URLを開く</h3>
 		<p>普通に開くには。</p>
-<code>page.goto([URL]);
-</code>
+<pre><code>page.goto([URL]);
+</code></pre>
 		<p>少し細かな設定。タイムアウトや読み込み終了条件など。</p>
-<code>page.goto([URL],{
+<pre><code>page.goto([URL],{
     timeout: [msec],
     waitUntil: ["load", "domcontentloaded", "networkidle0"]
     }
-);</code>
+);</code></pre>
 		<p>page.gotoが失敗したことを検出する。</p>
-<code>try {
+<pre><code>try {
     page.goto([URL]);
 }
 catch(e) {
     console.log('ページを開けませんでした');
-}</code>
+}</code></pre>
 		<p>page.gotoの戻り値でHTTP statusコードなどを取得できる。</p>
-<code>const RESULT = await page.goto([URL]);
+<pre><code>const RESULT = await page.goto([URL]);
 console.log(RESULT._status);
-</code>
+</code></pre>
             </div>
         </div>
 
