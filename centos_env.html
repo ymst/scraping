@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <!--- basic page needs    ================================================== -->
+    <meta charset="utf-8">
+    <title>Mok Space</title>
+    <meta content="puppeteer,chrome,javascript,browser,node.js,ブラウザ,scraping,scrape,スクレイピング,mac,windows,linux,ios,android,csv,excel,spreadsheet,エクセル,スプレッドシート,eBay,amazon,キーワード,keyword,automation,auto,automated,macro,script,bot,自動,マクロ,スクリプト,ボット", name="keyword">
+    <meta content="puppeteerを使ってECサイトから商品情報をスクレイピングすることが目的です" name="description">
+    <meta name="author" content="">
+    <!-- mobile specific metas    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&amp;subset=cyrillic,japanese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!-- CSS    ================================================== -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- script    ================================================== -->
+    <script src="js/modernizr.js"></script>
+    <script src="js/pace.min.js"></script>
+    <!-- favicons    ================================================== -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133844353-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-133844353-4');
+    </script>
+
+</head>
+<style>
+  /* CSS for LQIP blur added by Yama190220
+   use calss "lazyload blur" instead of "lazyload" */
+.blur {
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    transition: filter 600ms, -webkit-filter 600ms;
+}
+.blur.lazyloaded {
+    -webkit-filter: blur(0);
+    filter: blur(0);
+}
+.yy_title {
+    padding: 0.4em 0.5em; /* 文字の上下 左右の余白 */
+    color: #494949; /* 文字色 */
+    /* background: #f4f4f4; */ /* 背景色 */
+    border-left: solid 5px #7db4e6; /* 左線 */
+    border-bottom: solid 3px #d7d7d7; /* 下線 */
+}
+.yy_marker {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #FFDFEF 0%) repeat scroll 0 0;
+}
+.yy_marker2 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #cce5ff 0%) repeat scroll 0 0;
+}
+.yy_marker3 {
+    background:rgba(0, 0, 0, 0) linear-gradient(transparent 60%, #ffffbc 0%) repeat scroll 0 0;
+}
+.yy_date {
+    text-align: left;
+    color: #ff6347;
+}
+.yy_author {
+    text-align: right;
+    color: #5f9ea0;
+}
+.yy_pubdate {
+    text-align: right;
+    color: #006400;
+}
+</style>
+<body id="top">
+    <!-- pageheader    ================================================== -->
+    <section class="s-pageheader s-pageheader--home">
+        <header class="header">
+            <div class="header__content row">
+	      <h1 style="color: white;">Mok Space</h1>
+                <a class="header__toggle-menu" href="#0" title="Menu"><span>メニュー</span></a>
+                <nav class="header__nav-wrap">
+                    <h2 class="header__nav-heading h6">ナビゲーション</h2>
+                    <ul class="header__nav">
+                        <li><a href="top.html" title="">トップページ</a></li>
+                        <li><a href="skynew_m3s.html" title="">skynew m3sの設定</a></li>
+                        <li class="current"><a href="centos_env.html" title="">centosの立ち上げ</a></li>
+                        <li><a href="puppeteer_tips.html" title="">puppeteer TIPs</a></li>
+                    </ul> <!-- end header__nav -->
+                    <a href="#0" title="Close Menu" class="header__overlay-close close-mobile-menu">Close</a>
+                </nav> <!-- end header__nav-wrap -->
+            </div> <!-- header-content -->
+        </header> <!-- header -->
+    </section> <!-- end s-pageheader -->
+    <!-- s-content    ================================================== -->
+    <section class="s-content">
+
+        <div class="row narrow section-intro add-bottom text-center">
+            <div class="col-twelve tab-full">
+                <h1>centosの立ち上げ</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">centosの環境の構築</h3>
+		<p>iMacのときは当たり前のように使っていた機能、アプリ。それらを補うためにやったことを以下にメモしていく。</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">宛名ラベルを簡単に作成</h3>
+		<p>郵便物を送りたいときの宛名の印刷にiMacではテキストエディットを使っていた。リッチテキストの編集ができて、かんたんにフォントとかサイズとか変えられてちょうど良かったんだけど。</p>
+		<p>centosにそんなもんあるのか？と探してもイマイチ見つからず…デスクトップのメニューを眺めるとLibre Officeがあんじゃ〜ん！Wordみたいなヤツでサクッと作れた。</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">オーディオCDを焼く</h3>
+		<p>ふとしたことがキッカケで、ある音声をCDに焼く必要がでてきた。親世代に、音声ファイル送ってスマホで聞け、というのはなかなか酷なハナシで。カセットテープかCDなら聞けるというので、CDに焼いて送る約束をしました…がどうやって？</p>
+		<p>プリインストールされてました、デスクトップのメニューからBraceroを選択。音楽以外にもデータや動画など色々焼けるみたいで、サクッと焼けた。</p>
+		<p>あ、m4a(AAC)がダメだったからmp3にエンコードしてから焼きました。</p>
+            </div>
+        </div>
+
+    </section>
+    <footer class="s-footer">
+        <div class="s-footer__main">
+            <div class="row">
+	        <!-- ul>
+		    <span><u>その他のスクリプト</u></span>
+		    <li>ECサイトから商品情報を取得する<a href="index.html">スクリプト</a></li>
+		    <li>官報をダウンロードする<a href="index2.html">スクリプト</a></li>
+		    <li>競売情報をダウンロードする<a href="index3.html">スクリプト</a></li>
+		</ul -->
+            </div>
+        </div> <!-- end s-footer__main -->
+        <div class="s-footer__bottom">
+            <div class="row">
+                <div class="col-full">
+                    <div class="s-footer__copyright">
+                        <span>© Copyright Philosophy 2018</span>
+                        <span>Site Template by <a href="https://colorlib.com/">Colorlib</a></span>
+                    </div>
+                    <div class="go-top">
+                        <a class="smoothscroll" title="Back to Top" href="#top"></a>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end s-footer__bottom -->
+    </footer> <!-- end s-footer -->
+    <!-- preloader    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
+            <div class="line-scale">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Java Script    ================================================== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
