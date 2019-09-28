@@ -162,6 +162,77 @@ console.log(RESULT._status);
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">クリック動作</h3>
+		<p>調べた限りでは2通りの方法が見つかった。page.click()の方では動作しない場合が結構あった。</p>
+<pre><code>// クリックする要素を取得
+const Atag = await page.$('a[id="sample"]');
+// 上で取得した要素をクリック
+await Atag.click();</code></pre>
+		<p>もうひとつの方法はこちら。</p>
+<pre><code>// クリックする要素を取得
+await page.evaluate(() => {
+  const A = document.querySelector(a[id="sample"]);
+  A.click();
+});</code></pre>
+		<p>上のどちらの方法を使う場合でも、クリックする要素がなければエラーで止まるので、クリックする要素があるかどうかチェックしたいとき</p>
+<pre><code>try {
+  errFlag = false;
+  await page.waitFor('a[id="sample"]');
+}
+catch(e) {
+  errFlag = true;
+}
+if (errFlag) console.log('Atag not found.');</code></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">セレクト動作</h3>
+		<p>ドロップダウンリストから項目を選択する方法。</p>
+<pre><code>await page.select('select[id="sample"]', [値]);</code></pre>
+		<p>それでも要素を選択できない場合はこちら。</p>
+<pre><code>//await page.evaluate(() => {
+  let elem = document.querySelector('select[id="test"]');
+  elem.querySelector('option[value="n"]').selected = true;
+  let event = new Event('change', { bubbles: true });
+  event.simulated = true;
+  elem.dispatchEvent(event);
+});</code></pre>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-six tab-full">
+                <h3 class="yy_title">要素を取り出す</h3>
+		<p>色んな要素を取り出す方法</p>
+<pre><code>
+// AタグからHREFを取り出す
+const HREF =
+  await(
+    await(
+      await page.$('a[id="sample"]')
+    ).getProperty('href')
+  ).jsonValue();
+// 指定した要素を含むHTMLを取り出す
+const HTML =
+  await(
+    await(
+      await page.$('a[id="sample"]')
+    ).getProperty('outerHTML')
+  ).jsonValue();
+// 指定した要素の中のテキストだけを取り出す
+const HTML =
+  await(
+    await(
+      await page.$('a[id="sample"]')
+    ).getProperty('textContent')
+  ).jsonValue();</pre></code>
+            </div>
+        </div>
+
     </section>
     <footer class="s-footer">
         <div class="s-footer__main">
