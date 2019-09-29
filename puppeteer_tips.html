@@ -119,14 +119,23 @@
 page.setUserAgent('Mozilla/5.0 ..'); //特に指定しない場合</code></pre>
 		<p>プロキシを使う設定について。</p>
 <pre><code>puppeteer.launch({
-    args: ['--lang=ja,en-US,en', '--no-sandbox', '--proxy-server=[IPアドレス]:[ポート]']
-    });</code></pre>
+  args: [
+    '--lang=ja,en-US,en',
+    '--no-sandbox',
+    '--proxy-server
+      = [IPアドレス]:[ポート]'
+  ]
+});</code></pre>
 		<p>高速化のため、画像や動画を読み込まない設定をする。</p>
 <pre><code>page.on('request', interceptedRequest => {
-    if (interceptedRequest.url().endsWith('.png') || interceptedRequest.url().endsWith('.jpg') || interceptedRequest.url().endsWith('.mov') || interceptedRequest.url().endsWith('.mp4'))
-        interceptedRequest.abort();
+  if (
+    interceptedRequest.url().endsWith('.png') ||
+    interceptedRequest.url().endsWith('.jpg') ||
+    interceptedRequest.url().endsWith('.mov') ||
+    interceptedRequest.url().endsWith('.mp4'))
+      interceptedRequest.abort();
     else
-        interceptedRequest.continue();
+      interceptedRequest.continue();
 });</code></pre>
 		<p>タブの取得、タブの作成について。</p>
 <pre><code>// 1枚めのタブを取得する
@@ -145,9 +154,12 @@ var page = browser.newPage();</code></pre>
 		<p>少し細かな設定。タイムアウトや読み込み終了条件など。</p>
 <pre><code>page.goto([URL],{
     timeout: [msec],
-    waitUntil: ["load", "domcontentloaded", "networkidle0"]
-    }
-);</code></pre>
+    waitUntil: [
+      "load",
+      "domcontentloaded",
+      "networkidle0"
+    ]
+});</code></pre>
 		<p>page.gotoが失敗したことを検出する。</p>
 <pre><code>try {
     page.goto([URL]);
@@ -173,7 +185,8 @@ await Atag.click();</code></pre>
 		<p>もうひとつの方法はこちら。</p>
 <pre><code>// クリックする要素を取得
 await page.evaluate(() => {
-  const A = document.querySelector(a[id="sample"]);
+  const A = document.querySelector
+    ('a[id="sample"]');
   A.click();
 });</code></pre>
 		<p>上のどちらの方法を使う場合でも、クリックする要素がなければエラーで止まるので、クリックする要素があるかどうかチェックしたいとき</p>
@@ -194,10 +207,12 @@ if (errFlag) console.log('Atag not found.');</code></pre>
 		<p>ドロップダウンリストから項目を選択する方法。</p>
 <pre><code>await page.select('select[id="sample"]', [値]);</code></pre>
 		<p>それでも要素を選択できない場合はこちら。</p>
-<pre><code>//await page.evaluate(() => {
-  let elem = document.querySelector('select[id="test"]');
+<pre><code>await page.evaluate(() => {
+  let elem = 
+    document.querySelector('select[id="test"]');
   elem.querySelector('option[value="n"]').selected = true;
-  let event = new Event('change', { bubbles: true });
+  let event = 
+    new Event('change', { bubbles: true });
   event.simulated = true;
   elem.dispatchEvent(event);
 });</code></pre>
@@ -208,6 +223,7 @@ if (errFlag) console.log('Atag not found.');</code></pre>
             <div class="col-six tab-full">
                 <h3 class="yy_title">要素を取り出す</h3>
 		<p>色んな要素を取り出す方法</p>
+		<p>outerHTMLで取り出してreplaceで切り貼りする方法が便利かな</p>
 <pre><code>
 // AタグからHREFを取り出す
 const HREF =
